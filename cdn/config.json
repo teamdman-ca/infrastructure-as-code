@@ -1,0 +1,5 @@
+{
+    "resourceGroup":"teamdman-ca",
+    "storageAccount":"site10201",
+    "cdn": "teamdman-ca-cdn"
+}

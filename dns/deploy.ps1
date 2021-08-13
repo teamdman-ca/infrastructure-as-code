@@ -1,7 +1,5 @@
 $config = Get-Content .\config.json | ConvertFrom-Json;
 
-az account set --subscription $env:subscription;
-
 $params = @{
     parameters =  @{
     }
