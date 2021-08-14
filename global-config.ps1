@@ -1,7 +1,3 @@
-$env:subscription = "***REMOVED***";
-
-az account set --subscription $env:subscription;
-
 function Build-Params($params) {
     $rtn = @{ parameters = @{ } };
     foreach ($key in $params.Keys) {
