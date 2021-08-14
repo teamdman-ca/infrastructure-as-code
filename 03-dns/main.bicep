@@ -1,4 +1,4 @@
-param hostname string = 'teamdman.ca'
+param hostname string
 
 resource dns 'Microsoft.Network/dnsZones@2018-05-01' = {
   location: 'global'
