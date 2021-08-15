@@ -1,9 +1,5 @@
 param storageAccount string
 param cdn string 
-param dns string
-param hostName string
-param hostNameLabel string
-param certId string
 
 resource profile 'Microsoft.Cdn/profiles@2020-09-01' = {
   name: cdn
@@ -45,8 +41,4 @@ resource endpoint 'Microsoft.Cdn/profiles/endpoints@2020-09-01' = {
       }
     ]
   }
-}
-
-resource zone 'Microsoft.Network/dnsZones@2018-05-01' existing = {
-  name: dns
 }

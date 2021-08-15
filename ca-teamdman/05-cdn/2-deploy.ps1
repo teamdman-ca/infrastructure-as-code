@@ -7,12 +7,8 @@ $certId = az keyvault certificate show `
     --output "tsv";
 
 $params = Build-Params @{
-    storageAccount = $storageAccount
     cdn            = $cdn
-    hostName       = $hostName
-    hostNameLabel  = $hostNameLabel
-    certId         = $certId
-    dns            = $dns
+    storageAccount = $storageAccount
 }
 
 az deployment group create `
