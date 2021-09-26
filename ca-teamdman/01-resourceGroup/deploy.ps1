@@ -5,7 +5,7 @@ $params = Build-Params @{
 };
 
 az deployment sub create `
-    --name "ca.teamdman" `
+    --name "ca.raddest" `
     --template-file "main.bicep" `
     --location $location `
     --parameters $params;
