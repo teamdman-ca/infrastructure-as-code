@@ -34,14 +34,6 @@ resource "azurerm_dns_cname_record" "discord" {
   record              = "ca-teamdman-discord.azureedge.net"
 }
 
-resource "azurerm_dns_cname_record" "lol" {
-  resource_group_name = azurerm_resource_group.main.name
-  zone_name           = azurerm_dns_zone.main.name
-  name                = "lol"
-  ttl                 = 30
-  record              = "ca-teamdman-lol.azureedge.net"
-}
-
 resource "azurerm_dns_cname_record" "wwww" {
   resource_group_name = azurerm_resource_group.main.name
   zone_name           = azurerm_dns_zone.main.name
