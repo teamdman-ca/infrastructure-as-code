@@ -10,7 +10,6 @@ resource "azurerm_dns_a_record" "root" {
   ttl = 30
   target_resource_id = azurerm_cdn_endpoint.root.id
 }
-
 resource "azurerm_dns_cname_record" "awverify" {
   resource_group_name = azurerm_resource_group.main.name
   zone_name           = azurerm_dns_zone.main.name

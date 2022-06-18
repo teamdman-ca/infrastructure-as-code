@@ -39,7 +39,7 @@ resource "azurerm_cdn_endpoint" "root" {
   }
 
   lifecycle {
-    ignore_changes = [origin]
+    ignore_changes = [origin, is_compression_enabled]
   }
 }
 
@@ -94,7 +94,7 @@ resource "azurerm_cdn_endpoint" "discord" {
   }
 
   lifecycle {
-    ignore_changes = [origin]
+    ignore_changes = [origin, is_compression_enabled]
   }
 }
 
