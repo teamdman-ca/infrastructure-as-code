@@ -45,8 +45,8 @@ resource "azurerm_cdn_endpoint" "root" {
 
 resource "azurerm_cdn_endpoint_custom_domain" "root" {
   cdn_endpoint_id = azurerm_cdn_endpoint.root.id
-  name="teamdman-ca"
-  host_name = "teamdman.ca"
+  name            = "teamdman-ca"
+  host_name       = "teamdman.ca"
   user_managed_https {
     key_vault_certificate_id = "https://ca-teamdman.vault.azure.net/certificates/teamdman-ca"
   }
@@ -100,8 +100,8 @@ resource "azurerm_cdn_endpoint" "discord" {
 
 resource "azurerm_cdn_endpoint_custom_domain" "discord" {
   cdn_endpoint_id = azurerm_cdn_endpoint.discord.id
-  name="ca-teamdman-discord"
-  host_name = "discord.teamdman.ca"
+  name            = "ca-teamdman-discord"
+  host_name       = "discord.teamdman.ca"
   user_managed_https {
     key_vault_certificate_id = "https://ca-teamdman.vault.azure.net/certificates/teamdman-ca"
   }
