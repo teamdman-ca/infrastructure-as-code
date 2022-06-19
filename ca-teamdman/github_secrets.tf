@@ -4,11 +4,17 @@ data "github_repository" "teamdman_content" {
 
 locals {
   secrets = {
-    service_principal_creds = azuread_application_password.site_deployer_password.value
-    storage_account_name    = azurerm_storage_account.site.name
-    resource_group_name     = azurerm_resource_group.main.name
-    cdn_profile_name        = azurerm_cdn_profile.main.name
-    cdn_endpoint_name       = azurerm_cdn_endpoint.root.name
+    service_principal_creds = jsonencode({
+      clientId                   = azuread_application.site_deployer.application_id
+      clientSecret               = azuread_application_password.site_deployer_password.value
+      tenantId                   = data.azuread_client_config.current.tenant_id
+      subscriptionId             = data.azurerm_client_config.current.subscription_id
+      resourceManagerEndpointUrl = "https://management.azure.com/"
+    })
+    storage_account_name = azurerm_storage_account.site.name
+    resource_group_name  = azurerm_resource_group.main.name
+    cdn_profile_name     = azurerm_cdn_profile.main.name
+    cdn_endpoint_name    = azurerm_cdn_endpoint.root.name
   }
 }
 
