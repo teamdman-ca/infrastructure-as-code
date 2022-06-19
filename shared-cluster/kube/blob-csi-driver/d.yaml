@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beans
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: beans
+  template:
+    metadata:
+      labels: 
+        app: beans
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+        - name: beancon
+          image: nginx:latest
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: "/var/www/html"
+              name: persistent-storage
+      volumes:
+        - name: persistent-storage
+          csi:
+            driver: blob.csi.azure.com
+            volumeAttributes:
+              containerName: content  # required
+              secretName: azure-secret  # required
+              mountOptions: "-o allow_other --file-cache-timeout-in-seconds=120"  # optional
+

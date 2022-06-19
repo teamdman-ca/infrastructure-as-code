@@ -1,0 +1,23 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: blob-fuse
+provisioner: blob.csi.azure.com
+parameters:
+  resourceGroup: net.azurewebsiets
+  storageAccount: azurewebsiets  # cross subscription is not supported
+  containerName: content
+reclaimPolicy: Retain  # If set as "Delete" container would be removed after pvc deletion
+volumeBindingMode: Immediate
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-blob
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: blob-fuse
