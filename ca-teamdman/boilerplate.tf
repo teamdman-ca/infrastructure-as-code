@@ -21,6 +21,9 @@ terraform {
   }
 }
 
+locals {
+  dotenv = { for tuple in regexall("(.*)=(.*)", file(".env")) : tuple[0] => tuple[1] }
+}
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
@@ -28,6 +31,7 @@ provider "azurerm" {
 
 provider "github" {
   owner = "teamdman-ca"
+  token = local.dotenv.github_token
 }
 
 data "azurerm_client_config" "current" {
