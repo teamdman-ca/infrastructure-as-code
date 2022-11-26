@@ -13,7 +13,7 @@ resource "azurerm_storage_account" "main" {
 
 resource "azurerm_storage_container" "web" {
   storage_account_name = azurerm_storage_account.main.name
-  name = "$web"
+  name                 = "$web"
 }
 
 resource "azurerm_role_assignment" "site_write" {
