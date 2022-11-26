@@ -5,3 +5,8 @@ resource "azurerm_storage_account" "main" {
   account_replication_type = "LRS"
   account_tier             = "Standard"
 }
+
+resource "azurerm_storage_container" "web" {
+  storage_account_name = azurerm_storage_account.main.name
+  name = "$web"
+}
