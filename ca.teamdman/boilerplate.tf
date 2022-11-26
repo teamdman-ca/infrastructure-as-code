@@ -24,6 +24,7 @@ terraform {
 locals {
   dotenv = { for tuple in regexall("(.*)=(.*)", file(".env")) : tuple[0] => tuple[1] }
 }
+
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
