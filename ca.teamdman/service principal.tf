@@ -16,9 +16,3 @@ resource "azuread_service_principal" "site_deployer" {
   application_id = azuread_application.site_deployer.application_id
   owners         = azuread_application.site_deployer.owners
 }
-
-resource "azurerm_role_assignment" "cdn_purge" {
-  principal_id         = azuread_service_principal.site_deployer.object_id
-  scope                = azurerm_cdn_endpoint.root.id
-  role_definition_name = "CDN Endpoint Contributor"
-}
