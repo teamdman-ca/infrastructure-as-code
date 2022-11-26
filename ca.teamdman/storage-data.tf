@@ -1,7 +1,7 @@
-resource "azurerm_storage_account" "data" {
+resource "azurerm_storage_account" "main" {
   resource_group_name      = azurerm_resource_group.main.name
   location                 = "canadaeast"
-  name                     = "teamydata"
+  name                     = "teamdman"
   account_replication_type = "LRS"
   account_tier             = "Standard"
 }

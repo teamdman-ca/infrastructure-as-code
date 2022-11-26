@@ -40,17 +40,3 @@ resource "azurerm_dns_cname_record" "wwww" {
   ttl                 = 30
   record              = "teamdman.ca.azurewebsites.net"
 }
-
-
-data "azurerm_public_ip" "syncplay" {
-  resource_group_name = "ca.teamdman.syncplay"
-  name                = "syncplay"
-}
-
-resource "azurerm_dns_a_record" "syncplay" {
-  resource_group_name = azurerm_resource_group.main.name
-  zone_name           = azurerm_dns_zone.main.name
-  name                = "syncplay"
-  target_resource_id  = data.azurerm_public_ip.syncplay.id
-  ttl                 = 30
-}
