@@ -17,12 +17,6 @@ resource "azuread_service_principal" "site_deployer" {
   owners         = azuread_application.site_deployer.owners
 }
 
-resource "azurerm_role_assignment" "site_write" {
-  principal_id         = azuread_service_principal.site_deployer.object_id
-  scope                = azurerm_storage_account.site.id
-  role_definition_name = "Storage Blob Data Contributor"
-}
-
 resource "azurerm_role_assignment" "cdn_purge" {
   principal_id         = azuread_service_principal.site_deployer.object_id
   scope                = azurerm_cdn_endpoint.root.id

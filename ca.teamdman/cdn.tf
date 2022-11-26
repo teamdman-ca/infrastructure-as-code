@@ -6,7 +6,7 @@ resource "azurerm_cdn_profile" "main" {
 }
 
 locals {
-  host_name = regex("^https://(.*)/$", azurerm_storage_account.site.primary_web_endpoint)[0]
+  host_name = regex("^https://(.*)/$", azurerm_storage_account.main.primary_web_endpoint)[0]
 }
 
 resource "azurerm_cdn_endpoint" "root" {
