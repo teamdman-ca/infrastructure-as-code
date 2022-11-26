@@ -1,12 +1,10 @@
 apiVersion: external-secrets.io/v1beta1
-kind: SecretStore
+kind: ClusterSecretStore
 metadata:
   name: ca-teamdman
 spec:
   provider:
     azurekv:
       authType: ManagedIdentity
-      # Optionally set the Id of the Managed Identity, if multiple identities are assigned to external-secrets operator
-      identityId: "<MI_clientId>"
-      # URL of your vault instance, see: https://docs.microsoft.com/en-us/azure/key-vault/general/about-keys-secrets-certificates
-      vaultUrl: "https://my-keyvault-name.vault.azure.net"
+      identityId: ebc79310-5b30-4caf-9bfc-2c7f9c36353a
+      vaultUrl: https://ca-teamdman.vault.azure.net/

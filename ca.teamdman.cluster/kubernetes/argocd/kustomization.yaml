@@ -3,16 +3,16 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-- base/argo-cd-issuer.yaml
-- base/argo-cd-certificate.yaml
-- base/argo-cd-ui-ingress.yaml
-- base/rollouts-extension.yaml
+- base/issuer.yaml
+- base/certificate.yaml
+- base/ingress.yaml
 - https://raw.githubusercontent.com/argoproj/argo-cd/master/manifests/ha/install.yaml
 
 patchesStrategicMerge:
-- overlays/production/argo-cd-cm.yaml
-- overlays/production/argocd-server-service.yaml
-- overlays/production/argocd-repo-server-deploy.yaml
-- https://raw.githubusercontent.com/argoproj/argo-cd/master/notifications_catalog/install.yaml
+- overlays/argocd-cm.yaml
+# patchesStrategicMerge:
+# - overlays/production/argo-cd-cm.yaml
+# - overlays/production/argocd-server-service.yaml
+# - overlays/production/argocd-repo-server-deploy.yaml
 
 

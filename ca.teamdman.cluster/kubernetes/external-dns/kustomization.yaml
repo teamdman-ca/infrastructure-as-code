@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: external-dns-teamdman
+
+helmCharts:
+- name: external-dns
+  repo: https://charts.bitnami.com/bitnami
+  # version:
+  # releaseName:
+  namespace: external-dns-teamdman
+  valuesInline:
+    provider: azure
+    policy: sync
+    domainFilters:
+      - teamdman.ca # todo: merge external-dns namespaces into single one to manage all
+    azure:
+      resourceGroup: ca.teamdman
+      tenantId: 2e831e5f-9c6e-41a7-b295-50499684ba63
+      subscriptionId: 134ae9a1-7bc2-41f7-a2c7-a1e55f54ed04
+      useManagedIdentityExtension: true
+      userAssignedIdentityID: ebc79310-5b30-4caf-9bfc-2c7f9c36353a
