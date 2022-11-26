@@ -4,7 +4,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   name                = "shared-cluster"
   sku_tier            = "Free"
   dns_prefix          = "sharedcluster"
-
+  kubernetes_version = "1.24.6"
   default_node_pool {
     name     = "default"
     node_count = 1

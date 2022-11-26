@@ -33,14 +33,6 @@ resource "azurerm_dns_cname_record" "cdnverify" {
   record              = "cdnverify.ca-teamdman.azureedge.net"
 }
 
-resource "azurerm_dns_cname_record" "discord" {
-  resource_group_name = azurerm_resource_group.main.name
-  zone_name           = azurerm_dns_zone.main.name
-  name                = "discord"
-  ttl                 = 30
-  record              = "ca-teamdman-discord.azureedge.net"
-}
-
 resource "azurerm_dns_cname_record" "wwww" {
   resource_group_name = azurerm_resource_group.main.name
   zone_name           = azurerm_dns_zone.main.name
