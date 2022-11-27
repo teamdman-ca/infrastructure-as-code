@@ -15,8 +15,14 @@ spec:
   - namespace: argocd
     server: https://kubernetes.default.svc
 
-  clusterResourceBlacklist: []
-  namespaceResourceBlacklist: []
+  # clusterResourceBlacklist: []
+  # namespaceResourceBlacklist: []
+  clusterResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  namespaceResourceWhitelist:
+    - group: "*" 
+      kind: "*"
 
   # # Deny all cluster-scoped resources from being created, except for Namespace
   # clusterResourceWhitelist:
