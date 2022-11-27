@@ -4,7 +4,7 @@ metadata:
   name: argocd-cm
 data:
   server.insecure: "true"
-  admin.enabled: "false"
+  # admin.enabled: "false"
   statusbadge.enabled: "true"
   users.anonymous.enabled: "true"
   url: "https://argocd.teamdman.ca"
