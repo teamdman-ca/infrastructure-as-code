@@ -5,4 +5,3 @@ namespace: default
 resources:
   - base/clusterissuer-letsencrypt-prod.yaml
   - base/clusterissuer-letsencrypt-staging.yaml
-  - base/clusterissuer-selfsigned.yaml
