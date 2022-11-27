@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: azurewebsiets-dns
+  name: external-dns-azurewebsiets
   namespace: argocd
 spec:
-  project: azurewebsiets
+  project: core
 
   # Source of the application manifests
   source:
