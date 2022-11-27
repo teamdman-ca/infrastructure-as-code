@@ -24,5 +24,5 @@ resource "azurerm_key_vault_access_policy" "external-secrets-operator" {
   key_vault_id       = azurerm_key_vault.main.id
   secret_permissions = ["Get", "List"]
   tenant_id          = azurerm_key_vault.main.tenant_id
-  object_id          = data.azurerm_kubernetes_cluster.shared.kubelet_identity[0].object_id
+  object_id          = azurerm_kubernetes_cluster.main.kubelet_identity[0].object_id
 }
