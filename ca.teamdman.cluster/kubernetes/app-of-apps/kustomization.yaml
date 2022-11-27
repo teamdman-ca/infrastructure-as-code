@@ -6,3 +6,4 @@ resources:
 - base/project-core.yaml
 - base/app-argocd.yaml
 - base/app-app-of-apps.yaml
+- base/app-blob-csi-driver.yaml
