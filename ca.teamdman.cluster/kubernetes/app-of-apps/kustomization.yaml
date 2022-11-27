@@ -7,5 +7,6 @@ resources:
 - base/core/app-argocd.yaml
 - base/core/app-app-of-apps.yaml
 - base/core/app-blob-csi-driver.yaml
+- base/core/app-cert-manager.yaml
 - base/teamdman/project-teamdman.yaml
 - base/teamdman/app-teamdman-www.yaml
