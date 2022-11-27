@@ -1,7 +1,7 @@
 resource "azurerm_kubernetes_cluster" "main" {
   resource_group_name = azurerm_resource_group.main.name
   location            = "canadacentral"
-  name                = "shared-cluster"
+  name                = "teamdman-aks"
   sku_tier            = "Free"
   dns_prefix          = "sharedcluster"
   kubernetes_version = "1.24.6"
@@ -14,9 +14,5 @@ resource "azurerm_kubernetes_cluster" "main" {
 
   identity {
     type = "SystemAssigned"
-  }
-
-  key_vault_secrets_provider {
-    secret_rotation_enabled = true
   }
 }
