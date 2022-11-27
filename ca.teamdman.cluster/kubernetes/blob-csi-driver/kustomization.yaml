@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: argocd
+
+helmCharts:
+- name: blob-csi-driver
+  repo: https://raw.githubusercontent.com/kubernetes-sigs/blob-csi-driver/master/charts
+  version: v1.18.0
+  namespace: kube-system
+  valuesInline:
+    node.enableBlobfuseProxy: true
