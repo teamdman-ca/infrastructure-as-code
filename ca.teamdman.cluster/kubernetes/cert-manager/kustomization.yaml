@@ -3,10 +3,10 @@ kind: Kustomization
 namespace: argocd
 
 resources:
+  - https://github.com/cert-manager/cert-manager/releases/download/v1.10.1/cert-manager.yaml
   - base/clusterissuer-letsencrypt-prod.yaml
   - base/clusterissuer-letsencrypt-staging.yaml
   - base/clusterissuer-selfsigned.yaml
-  - https://github.com/cert-manager/cert-manager/releases/download/v1.10.1/cert-manager.yaml
 
 # helmCharts:
 # - name: cert-manager
