@@ -5,8 +5,8 @@ namespace: external-dns-teamdman
 helmCharts:
 - name: external-dns
   repo: https://charts.bitnami.com/bitnami
-  # version:
-  # releaseName:
+  version: 6.12.1
+  releaseName: external-dns
   namespace: external-dns-teamdman
   valuesInline:
     provider: azure
