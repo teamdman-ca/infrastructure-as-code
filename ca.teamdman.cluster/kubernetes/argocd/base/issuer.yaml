@@ -40,3 +40,11 @@ spec:
           environment: AzurePublicCloud
           managedIdentity:
             clientID: ebc79310-5b30-4caf-9bfc-2c7f9c36353a
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: selfsigned-issuer
+  namespace: sandbox
+spec:
+  selfSigned: {}

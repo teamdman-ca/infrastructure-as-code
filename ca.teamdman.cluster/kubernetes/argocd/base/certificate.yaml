@@ -5,8 +5,11 @@ metadata:
 spec:
   secretName: argocd-secret
   issuerRef:
-    name: letsencrypt-prod
     kind: Issuer
+    name: letsencrypt-prod # retry after 2022-11-28T13:21:56Z lol
+    # name: letsencrypt-staging
+    # name: selfsigned-issuer
   commonName: argocd.teamdman.ca
   dnsNames:
   - argocd.teamdman.ca
+  - temp1.teamdman.ca
