@@ -9,7 +9,7 @@ resources:
 - base/core/app-blob-csi-driver.yaml
 - base/core/app-cert-manager.yaml
 - base/core/app-external-secrets.yaml
-- base/core/app-ingress-nginx.yaml
+# - base/core/app-ingress-nginx.yaml
 - base/teamdman/project-teamdman.yaml
 - base/teamdman/app-teamdman-www.yaml
 - base/teamdman/app-external-dns-teamdman.yaml
