@@ -11,11 +11,8 @@ locals {
       subscriptionId             = data.azurerm_client_config.current.subscription_id
       resourceManagerEndpointUrl = "https://management.azure.com/"
     })
-    resource_group_name    = azurerm_resource_group.main.name
     storage_account_name   = azurerm_storage_account.main.name
     storage_container_name = azurerm_storage_container.web.name
-    # cdn_profile_name     = azurerm_cdn_profile.main.name
-    # cdn_endpoint_name    = azurerm_cdn_endpoint.root.name
   }
 }
 
