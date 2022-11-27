@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: external-secrets
 
 resources:
-- base/provider.yaml
+- base/cluster-secret-store.yaml
