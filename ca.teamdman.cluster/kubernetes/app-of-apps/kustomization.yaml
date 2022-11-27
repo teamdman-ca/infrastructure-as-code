@@ -3,7 +3,9 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-- base/project-core.yaml
-- base/app-argocd.yaml
-- base/app-app-of-apps.yaml
-- base/app-blob-csi-driver.yaml
+- base/core/project-core.yaml
+- base/core/app-argocd.yaml
+- base/core/app-app-of-apps.yaml
+- base/core/app-blob-csi-driver.yaml
+- base/teamdman/project-teamdman.yaml
+- base/teamdman/app-teamdman.yaml
