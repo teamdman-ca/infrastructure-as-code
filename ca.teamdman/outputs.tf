@@ -16,7 +16,8 @@ output "external_secrets_operator_config" {
     tenant_id           = data.azurerm_client_config.current.tenant_id
     subscription_id     = data.azurerm_client_config.current.subscription_id
     key_vault_uri       = azurerm_key_vault.main.vault_uri
-    managed_identity_id = data.azurerm_kubernetes_cluster.shared.kubelet_identity[0].object_id
+    managed_identity_id = data.azurerm_kubernetes_cluster.shared.kubelet_identity[0].client_id
+    # managed_identity_id = data.azurerm_kubernetes_cluster.shared.kubelet_identity[0].object_id
   }
 }
 
