@@ -6,6 +6,6 @@ spec:
   provider:
     azurekv:
       authType: ManagedIdentity
-      identityId: "ebc79310-5b30-4caf-9bfc-2c7f9c36353a"
+      identityId: "860af6b9-4135-4814-bf81-16f3e8ebcbdd"
       tenantId: "2e831e5f-9c6e-41a7-b295-50499684ba63"
       vaultUrl: "https://ca-teamdman.vault.azure.net/"

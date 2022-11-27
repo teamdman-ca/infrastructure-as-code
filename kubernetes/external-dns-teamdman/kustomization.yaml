@@ -18,4 +18,4 @@ helmCharts:
       tenantId: 2e831e5f-9c6e-41a7-b295-50499684ba63
       subscriptionId: 134ae9a1-7bc2-41f7-a2c7-a1e55f54ed04
       useManagedIdentityExtension: true
-      userAssignedIdentityID: ebc79310-5b30-4caf-9bfc-2c7f9c36353a
+      userAssignedIdentityID: 860af6b9-4135-4814-bf81-16f3e8ebcbdd

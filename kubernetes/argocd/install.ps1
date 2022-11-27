@@ -4,10 +4,11 @@ kubectl apply -k .
 
 Write-Host "Waiting for initial secret to become available" -ForegroundColor "Cyan"
 while ($true) {
-    $x = kubectl get secret -n argocd argocd-initial-admin-secret -o name
+    $x = kubectl get secret -n argocd argocd-initial-admin-secret -o name --ignore-not-found
     if ($x.Count -gt 0) {
         break
     }
+    Start-Sleep -Seconds 1
 }
 
 $pw = kubectl get secret -n argocd argocd-initial-admin-secret -o json | ConvertFrom-Json

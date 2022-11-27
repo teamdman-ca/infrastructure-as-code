@@ -1,4 +1,0 @@
-installCRDs: true
-extraArgs:
-  - --cluster-issuer-ambient-credentials
-  - --issuer-ambient-credentials

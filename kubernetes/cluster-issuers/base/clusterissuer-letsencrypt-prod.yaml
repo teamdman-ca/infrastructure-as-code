@@ -18,4 +18,4 @@ spec:
           hostedZoneName: teamdman.ca
           environment: AzurePublicCloud
           managedIdentity:
-            clientID: ebc79310-5b30-4caf-9bfc-2c7f9c36353a
+            clientID: 860af6b9-4135-4814-bf81-16f3e8ebcbdd
