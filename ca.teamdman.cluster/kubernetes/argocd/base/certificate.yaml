@@ -6,7 +6,7 @@ spec:
   secretName: argocd-secret
   issuerRef:
     kind: Issuer
-    name: letsencrypt-prod # retry after 2022-11-28T13:21:56Z lol
+    name: letsencrypt-prod
     # name: letsencrypt-staging
     # name: selfsigned-issuer
   commonName: argocd.teamdman.ca
