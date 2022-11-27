@@ -1,5 +1,5 @@
 #!/usr/bin/pwsh
-kubectl create ns nginx-ingress
+kubectl create ns ingress-nginx
 kubectl kustomize --enable-helm | kubectl apply -f -
 
 # helm install ingress-nginx ingress-nginx/ingress-nginx `

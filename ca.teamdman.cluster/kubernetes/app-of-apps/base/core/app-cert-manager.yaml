@@ -50,6 +50,13 @@ spec:
   #   managedFieldsManagers:
   #   - kube-controller-manager
 
+  ignoreDifferences:
+  - group: admissionregistration.k8s.io
+    kind: ValidatingWebhookConfiguration
+    name: cert-manager-webhook
+    jqPathExpressions:
+      - .webhooks[].namespaceSelector.matchExpressions[] | select(.key == "control-plane")
+
   # RevisionHistoryLimit limits the number of items kept in the application's revision history, which is used for
   # informational purposes as well as for rollbacks to previous versions. This should only be changed in exceptional
   # circumstances. Setting to zero will store no history. This will reduce storage used. Increasing will increase the
