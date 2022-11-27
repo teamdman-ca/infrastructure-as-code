@@ -13,3 +13,5 @@ resources:
 # - base/core/app-ingress-nginx.yaml
 - base/teamdman/project-teamdman.yaml
 - base/teamdman/app-teamdman-www.yaml
+- base/azurewebsiets/project-azurewebsiets.yaml
+- base/azurewebsiets/app-azurewebsiets-www.yaml
