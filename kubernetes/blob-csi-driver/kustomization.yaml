@@ -7,9 +7,8 @@ helmCharts:
   version: v1.18.0
   namespace: kube-system
   releaseName: blob-csi-driver
-  valuesMerge: merge
   valuesInline:
-    node.enableBlobfuseProxy: true
-    cloud: AzureStackCloud
     controller:
       replicas: 1
+    node.enableBlobfuseProxy: true
+    cloud: AzureStackCloud
