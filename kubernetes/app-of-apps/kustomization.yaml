@@ -10,6 +10,8 @@ resources:
 - base/core/app-cert-manager.yaml
 - base/core/app-cluster-issuers.yaml
 - base/core/app-cluster-secretstores.yaml
+- base/core/app-ingress-nginx.yaml
+- base/core/app-cluster-secretstores.yaml
 - base/core/app-external-secrets.yaml
 - base/core/app-external-dns-teamdman.yaml
 - base/core/app-external-dns-azurewebsiets.yaml
