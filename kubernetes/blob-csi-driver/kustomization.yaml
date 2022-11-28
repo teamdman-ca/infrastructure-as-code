@@ -1,6 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: kube-system
 
 helmCharts:
 - name: blob-csi-driver
@@ -8,5 +7,7 @@ helmCharts:
   version: v1.18.0
   namespace: kube-system
   releaseName: blob-csi-driver
+  valuesMerge: merge
   valuesInline:
     node.enableBlobfuseProxy: true
+    cloud: AzureStackCloud
