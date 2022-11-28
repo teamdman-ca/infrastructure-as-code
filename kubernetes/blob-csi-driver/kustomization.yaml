@@ -11,3 +11,4 @@ helmCharts:
   valuesInline:
     node.enableBlobfuseProxy: true
     cloud: AzureStackCloud
+    controller.replicas: 1
