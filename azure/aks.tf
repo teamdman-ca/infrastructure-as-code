@@ -6,6 +6,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   dns_prefix          = "sharedcluster"
   kubernetes_version = "1.24.6"
   oidc_issuer_enabled = true
+  workload_identity_enabled = true
   default_node_pool {
     name     = "default"
     node_count = 1
