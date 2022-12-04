@@ -14,6 +14,7 @@ resources:
 - base/core/app-external-secrets.yaml
 - base/core/app-external-dns-teamdman.yaml
 - base/core/app-external-dns-azurewebsiets.yaml
+- base/core/app-workload-identity-webhook.yaml
 - base/teamdman/project-teamdman.yaml
 - base/teamdman/app-teamdman-www.yaml
 - base/azurewebsiets/project-azurewebsiets.yaml
