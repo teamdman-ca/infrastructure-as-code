@@ -36,3 +36,9 @@ output "external_dns_config" {
     userAssignedIdentityID      = azurerm_kubernetes_cluster.main.kubelet_identity[0].client_id
   }
 }
+
+output "gifts_workload_identity" {
+  value = {
+    clientId = azurerm_user_assigned_identity.gifts.client_id
+  }
+}
