@@ -6,6 +6,6 @@ data:
   server.insecure: "true"
   # admin.enabled: "false"
   statusbadge.enabled: "true"
-  users.anonymous.enabled: "true"
+  users.anonymous.enabled: "false"
   kustomize.buildOptions: --enable-helm
   url: "https://argocd.teamdman.ca"
