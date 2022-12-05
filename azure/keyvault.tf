@@ -36,11 +36,20 @@ resource "azurerm_key_vault" "gifts" {
   name                = "ca-teamdman-gifts"
 }
 
+resource "random_password" "jwt_key" {
+  length           = 256
+  special          = true
+}
 resource "azurerm_key_vault_secret" "gifts" {
   for_each     = {
-    "storage-account-name" = azurerm_storage_account.main.name
-    "storage-account-key"  = azurerm_storage_account.main.primary_access_key
-    "storage-account-table" = azurerm_storage_table.gifts.name
+    "StorageConnectionString" = azurerm_storage_account.main.primary_connection_string
+    "StorageTableName" = azurerm_storage_table.gifts.name
+    "JwtKey" = random_password.jwt_key.result
+    "JwtIssuer" = "https://gifts.teamdman.ca/"
+    "JwtAudience" = "https://gifts.teamdman.ca/"
+    # "storage-account-name" = azurerm_storage_account.main.name
+    # "storage-account-key"  = azurerm_storage_account.main.primary_access_key
+    # "storage-account-table" = azurerm_storage_table.gifts.name
   }
   key_vault_id = azurerm_key_vault.gifts.id
   name         = each.key
@@ -49,6 +58,7 @@ resource "azurerm_key_vault_secret" "gifts" {
     azurerm_key_vault_access_policy.me
   ]
 }
+
 
 resource "azurerm_key_vault_access_policy" "gifts" {
   key_vault_id       = azurerm_key_vault.gifts.id
