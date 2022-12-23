@@ -11,7 +11,7 @@ spec:
       - name: KEYVAULT_URL
         value: https://ca-teamdman-gifts.vault.azure.net/
       - name: SECRET_NAME
-        value: storage-account-table
+        value: StorageTableName
       # - name: AZURE_CLIENT_ID
       #   value: edbcd52a-f602-43be-951c-16d6cf7c7146
   nodeSelector:
