@@ -4,4 +4,6 @@ namespace: gifts
 
 resources:
 - base/service-account.yaml
-- base/pod.yaml
+- base/ingress.yaml
+- base/deployment.yaml
+- base/service.yaml
