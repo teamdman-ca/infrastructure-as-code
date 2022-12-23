@@ -43,7 +43,6 @@ resource "random_password" "jwt_key" {
 resource "azurerm_key_vault_secret" "gifts" {
   for_each     = {
     "StorageConnectionString" = azurerm_storage_account.main.primary_connection_string
-    "StorageTableName" = azurerm_storage_table.gifts.name
     "JwtKey" = random_password.jwt_key.result
     "JwtIssuer" = "https://gifts.teamdman.ca/"
     "JwtAudience" = "https://gifts.teamdman.ca/"
