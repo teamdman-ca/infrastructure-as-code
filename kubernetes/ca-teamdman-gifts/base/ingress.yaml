@@ -18,13 +18,13 @@ spec:
     - host: gifts.teamdman.ca
       http:
         paths:
-          # - path: /api/
-          #   pathType: Prefix
-          #   backend:
-          #     service:
-          #       name: gifts-backend
-          #       port:
-          #         number: 80
+          - path: /api/
+            pathType: Prefix
+            backend:
+              service:
+                name: gifts-backend
+                port:
+                  number: 80
           - path: /
             pathType: Prefix
             backend:
