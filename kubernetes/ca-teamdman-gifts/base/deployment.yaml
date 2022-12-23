@@ -14,6 +14,7 @@ spec:
     spec:
       nodeSelector:
         kubernetes.io/os: linux
+      serviceAccountName: gifts-sa
       containers:
         - name: gifts-backend
           image: teamdman.azurecr.io/gifts-backend:latest
