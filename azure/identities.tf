@@ -9,6 +9,6 @@ resource "azurerm_federated_identity_credential" "gifts" {
   parent_id = azurerm_user_assigned_identity.gifts.id
   name = "gifts"
   issuer = azurerm_kubernetes_cluster.main.oidc_issuer_url
-  subject = "system:serviceaccount:gifts:gifts"
+  subject = "system:serviceaccount:teamdman-gifts:gifts-sa"
   audience = ["api://AzureADTokenExchange"]
 }

@@ -1,0 +1,1 @@
+[Attach an ACR to an AKS cluster](https://learn.microsoft.com/en-us/azure/aks/cluster-container-registry-integration?tabs=azure-cli) by running `az aks update -n teamdman-aks -g ca.teamdman --attach-acr teamdman`

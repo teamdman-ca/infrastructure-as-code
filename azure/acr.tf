@@ -8,5 +8,5 @@ resource "azurerm_container_registry" "main" {
 resource "azurerm_role_assignment" "acrpull" {
   scope                = azurerm_container_registry.main.id
   role_definition_name = "AcrPull"
-  principal_id         = azurerm_kubernetes_cluster.main.identity.0.principal_id
+  principal_id         = azurerm_kubernetes_cluster.main.kubelet_identity.0.object_id
 }
