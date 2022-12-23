@@ -25,3 +25,10 @@ spec:
                 name: gifts-backend
                 port:
                   number: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: gifts-frontend
+                port:
+                  number: 80
