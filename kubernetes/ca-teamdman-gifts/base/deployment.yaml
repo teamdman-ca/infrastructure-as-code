@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gifts-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: gifts-backend
+  template:
+    metadata:
+      labels: 
+        app: gifts-backend
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+        - name: gifts-backend
+          image: teamdman.azurecr.io/gifts-backend:latest
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 250m
+              memory: 256Mi
+          ports:
+            - containerPort: 80

@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: gifts
+  annotations:
+    # cert-manager.io/cluster-issuer: letsencrypt-prod
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+    # cert-manager.io/issuer: letsencrypt-prod
+spec:
+  ingressClassName: nginx
+  # This section is only required if TLS is to be enabled for the Ingress
+  tls:
+    - hosts:
+        - gifts.teamdman.ca
+      secretName: gifts-teamdman-tls
+  rules:
+    - host: gifts.teamdman.ca
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: gifts-backend
+                port:
+                  number: 80
