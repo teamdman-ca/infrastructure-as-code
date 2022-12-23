@@ -17,5 +17,6 @@ resources:
 - base/core/app-workload-identity-webhook.yaml
 - base/teamdman/project-teamdman.yaml
 - base/teamdman/app-teamdman-www.yaml
+- base/teamdman/app-teamdman-gifts.yaml
 - base/azurewebsiets/project-azurewebsiets.yaml
 - base/azurewebsiets/app-azurewebsiets-www.yaml
