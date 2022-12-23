@@ -3,8 +3,8 @@ kind: Ingress
 metadata:
   name: gifts
   annotations:
-    # cert-manager.io/cluster-issuer: letsencrypt-prod
-    cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    # cert-manager.io/cluster-issuer: letsencrypt-staging
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     # cert-manager.io/issuer: letsencrypt-prod
 spec:
