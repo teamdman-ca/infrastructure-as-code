@@ -7,4 +7,5 @@ resources:
 - base/ingress.yaml
 - base/deployment-backend.yaml
 - base/deployment-frontend.yaml
-- base/service.yaml
+- base/service-backend.yaml
+- base/service-frontend.yaml
