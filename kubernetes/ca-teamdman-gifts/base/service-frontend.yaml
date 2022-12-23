@@ -4,6 +4,7 @@ metadata:
   name: gifts-frontend
 spec:
   ports:
-    - port: 3000
+    - port: 80
+      targetPort: 3000
   selector: 
     app: gifts-frontend
