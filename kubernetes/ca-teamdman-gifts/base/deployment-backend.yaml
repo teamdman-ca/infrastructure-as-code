@@ -11,6 +11,7 @@ spec:
     metadata:
       labels: 
         app: gifts-backend
+        azure.workload.identity/use: "true"
     spec:
       nodeSelector:
         kubernetes.io/os: linux
