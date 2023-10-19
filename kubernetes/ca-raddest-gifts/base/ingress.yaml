@@ -12,10 +12,10 @@ spec:
   # This section is only required if TLS is to be enabled for the Ingress
   tls:
     - hosts:
-        - gifts.teamdman.ca
-      secretName: gifts-teamdman-tls
+        - gifts.raddest.ca
+      secretName: gifts-raddest-tls
   rules:
-    - host: gifts.teamdman.ca
+    - host: gifts.raddest.ca
       http:
         paths:
           - path: /api/
