@@ -1,4 +1,4 @@
 .env
 .terraform
-rendered
 old/**/charts
+rendered
