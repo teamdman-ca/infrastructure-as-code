@@ -20,9 +20,9 @@ resource "azurerm_role_assignment" "site_write" {
 
 resource "azurerm_storage_table" "gifts" {
   name                 = "gifts"
-  storage_account_name = azurerm_storage_account.main.name  
+  storage_account_name = azurerm_storage_account.main.name
 }
 resource "azurerm_storage_table" "gifts_dev" {
   name                 = "giftsdev"
-  storage_account_name = azurerm_storage_account.main.name  
+  storage_account_name = azurerm_storage_account.main.name
 }

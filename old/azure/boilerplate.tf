@@ -4,29 +4,30 @@ terraform {
     storage_account_name = "terraform9201"
     container_name       = "tfstate"
     key                  = "ca.teamdman.tfstate"
+    # subscription_id = ""
   }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = ">=3.34.0"
+      version = ">=3.77.0"
     }
     azuread = {
       source  = "hashicorp/azuread"
-      version = ">=2.31.0"
+      version = ">=2.44.1"
     }
     github = {
       source  = "integrations/github"
-      version = ">=4.26.1"
+      version = ">=5.40.0"
     }
     random = {
       source  = "hashicorp/random"
-      version = ">=3.4.3"
+      version = ">=3.5.1"
     }
   }
 }
 
 locals {
-  dotenv = { for tuple in regexall("(.*)=(.*)", file(".env")) : tuple[0] => tuple[1] }
+  dotenv = { for tuple in regexall("(.*)=(.*?)\\s*", file(".env")) : tuple[0] => tuple[1] }
 }
 
 # Configure the Microsoft Azure Provider
