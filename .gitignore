@@ -2,3 +2,5 @@
 .terraform
 old/**/charts
 rendered
+**/*.tfstate.*
+**/*.tfstate
