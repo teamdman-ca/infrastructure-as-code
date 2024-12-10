@@ -11,7 +11,7 @@ resource "azurerm_kubernetes_cluster" "main" {
   name                              = var.cluster_name
   dns_prefix                        = var.cluster_dns_prefix
   sku_tier                          = "Free"
-  kubernetes_version                = "1.28"
+  kubernetes_version                = "1.29.10"
   oidc_issuer_enabled               = true
   workload_identity_enabled         = true
   role_based_access_control_enabled = true

@@ -1,4 +1,4 @@
-resource "helm_release" "cert_manager" {
+resource "helm_release" "main" {
   repository = "https://charts.jetstack.io"
   chart      = "cert-manager"
   version    = "v1.14.5"
@@ -22,5 +22,9 @@ resource "helm_release" "cert_manager" {
     value = "true"
     # value = "\"true\""
     type  = "string"
+  }
+  set {
+    name = "installCRDs"
+    value = "true"
   }
 }
